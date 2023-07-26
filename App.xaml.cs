@@ -6,6 +6,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new BMICalc();
+		MainPage = new NavigationPage( new BMICalc());
 	}
 }

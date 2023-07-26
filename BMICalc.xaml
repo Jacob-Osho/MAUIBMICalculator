@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BMICalculator.BMICalc"
-             Title="BMICalc">
+             Title="BMICalc"
+             NavigationPage.HasNavigationBar="False">
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,*"
           ColumnDefinitions="0.5*,0.5*"
           Margin="20"
@@ -61,7 +62,8 @@
                        FontSize="Body"
                        HorizontalOptions="Center"
                        Text="{Binding Source={x:Reference heightSlider},
-                    Path=Value, StringFormat='{0:F0}'}"/>
+                    Path=Value, StringFormat='{0:F0}'}"
+                       x:Name="LblHeight"/>
             </VerticalStackLayout>
         </Frame>
         <Frame Grid.Row="3"
@@ -79,7 +81,8 @@
                        FontSize="Body"
                        HorizontalOptions="Center"
                        Text="{Binding Source={x:Reference WeighttSlider},
-                    Path=Value, StringFormat='{0:F0}'}"/>
+                    Path=Value, StringFormat='{0:F0}'}"
+                         x:Name="LblWeight"/>
             </VerticalStackLayout>
         </Frame>
         <Button
@@ -90,12 +93,13 @@
             Text="Calculate your BMI"
             FontSize="Medium"
             BackgroundColor="BlueViolet"
-            x:Name="CalculateButton"
             Padding="20,5,20,20"
             FontAttributes="Bold"
             HorizontalOptions="Center"
             VerticalOptions="EndAndExpand"
             CornerRadius="15"
+                x:Name="CalculateButton"
+            Clicked="CalculateButton_Click"
             />
     </Grid>
 </ContentPage>

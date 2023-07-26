@@ -16,6 +16,15 @@ public partial class BMICalc : ContentPage
         CalculateButton.BackgroundColor = Color.FromArgb("FF0000FF");
 
     }
+    protected void CalculateButton_Click(object sender, EventArgs e)
+    {
+        double height =Convert.ToInt32( LblHeight.Text);
+        double weight =Convert.ToInt32( LblWeight.Text);
+
+        double bmiResult = (weight / height / height) * 10000;
+        //DisplayAlert("Your  BMI is - ", bmiResult.ToString(),"cancel");
+        Navigation.PushAsync(new BMIResultPage(bmiResult));
+    }
     protected void TapFemale_Tapped(object sender, EventArgs e)
     {
         FemaleFrame.BorderColor = Color.FromArgb("#FF000000");
